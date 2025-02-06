@@ -1,0 +1,35 @@
+@import "../../../styles.scss";
+
+:host {
+  background-color: $backgroundColorPrimary;
+  display: block;
+  border-bottom: 2px solid #414141;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  @include maxWidth();
+  .logo {
+    span {
+      font-size: 3rem;
+      font-weight: 900;
+      color: red;
+    }
+  }
+  nav {
+    ul {
+      list-style: none;
+      li {
+        display: inline;
+        margin: 16px;
+        a {
+          color: $textColorPrimary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

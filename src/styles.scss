@@ -71,6 +71,21 @@
   src: url("/fonts/Roboto/roboto-v47-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+$backgroundColorPrimary: #212121;
+$textColorPrimary: #fff;
+
+@mixin maxWidth {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 125ms ease;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
