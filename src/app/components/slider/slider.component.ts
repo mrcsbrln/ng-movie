@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MovieDataService } from '../../services/movie-data.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-slider',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
 })

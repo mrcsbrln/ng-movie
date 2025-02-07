@@ -1,26 +1,32 @@
+@if(movies$ | async; as movies) {
 <div class="slider">
+  @for(movie of movies.results; track movie.id){
   <div class="slide">
     <div class="slide-bg">
       <img
-        src="https://www.themoviedb.org/t/p/w1280/7JqXmi6fUrUjOHxmu30CAc8SnXn.jpg"
+        src="{{ 'https://www.themoviedb.org/t/p/w1280' + movie.backdrop_path }}"
         alt=""
       />
     </div>
     <div class="slide-pane">
-      <h2 class="title mb-3">Slider Title</h2>
+      <h2 class="title mb-3">{{ movie.title }}</h2>
       <div class="meta-data">
         <div class="rating mb-1">
           <i class="pi pi-star-fill"></i>
-          <span>9.9</span>
+          <span>{{ movie.vote_average }}</span>
           <span>/10</span>
         </div>
         <div class="votes mb-1">
           <i class="pi pi-users"></i>
-          <span>5056</span>
+          <span>{{ movie.vote_count }}</span>
         </div>
-        <div class="release-date"><i class="pi pi-calendar"></i>03.04.1979</div>
-        <div class="description">Movie description</div>
+        <div class="release-date mb-3">
+          <i class="pi pi-calendar"></i>{{ movie.release_date }}
+        </div>
+        <div class="description">{{ movie.overview }}</div>
       </div>
     </div>
   </div>
+  }
 </div>
+}
