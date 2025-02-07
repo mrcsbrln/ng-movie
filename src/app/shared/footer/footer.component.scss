@@ -2,7 +2,14 @@
 
 footer {
   background-color: $backgroundColorPrimary;
-  span {
-    color: $textColorPrimary;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    @include maxWidth();
+    span {
+      @include textStyle();
+    }
   }
 }

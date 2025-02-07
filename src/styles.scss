@@ -80,6 +80,11 @@ $textColorPrimary: #fff;
   margin-right: auto;
 }
 
+@mixin textStyle {
+  color: $textColorPrimary;
+  font-weight: 200;
+}
+
 * {
   padding: 0;
   margin: 0;
