@@ -1,15 +1,15 @@
-@import "../../../styles.scss";
+@use "../../../styles.scss" as styles;
 
 footer {
-  background-color: $backgroundColorPrimary;
+  background-color: styles.$backgroundColorPrimary;
   .wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 32px;
-    @include maxWidth();
+    @include styles.maxWidth();
     span {
-      @include textStyle();
+      @include styles.textStyle();
     }
   }
 }

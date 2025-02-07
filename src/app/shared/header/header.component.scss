@@ -1,7 +1,7 @@
-@import "../../../styles.scss";
+@use "../../../styles.scss" as styles;
 
 header {
-  background-color: $backgroundColorPrimary;
+  background-color: styles.$backgroundColorPrimary;
   display: block;
   border-bottom: 2px solid #414141;
 }
@@ -11,7 +11,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 32px;
-  @include maxWidth();
+  @include styles.maxWidth();
   .logo {
     span {
       font-size: 3rem;
@@ -26,7 +26,7 @@ header {
         display: inline;
         margin: 16px;
         a {
-          @include textStyle();
+          @include styles.textStyle();
           text-decoration: none;
         }
       }
