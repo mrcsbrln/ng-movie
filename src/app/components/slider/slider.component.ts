@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { MovieDataService } from '../../services/movie-data.service';
 
 @Component({
   selector: 'app-slider',
@@ -7,10 +7,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
 })
-export class SliderComponent implements OnInit {
-  private http: HttpClient = inject(HttpClient);
+export class SliderComponent {
+  private movieDataService = inject(MovieDataService);
 
-  ngOnInit() {
-    console.log('Hello Component');
-  }
+  movies$ = this.movieDataService.getPopularMovies();
 }
