@@ -74,7 +74,10 @@
 }
 
 $backgroundColorPrimary: #212121;
+$backgroundColorSecondary: #141414;
+$borderColor: #414141;
 $textColorPrimary: #fff;
+$iconColor: orange;
 
 @mixin maxWidth {
   max-width: 1440px;
@@ -94,4 +97,6 @@ $textColorPrimary: #fff;
 
 body {
   font-family: "Roboto", sans-serif;
+  color: $textColorPrimary;
+  background-color: $backgroundColorSecondary;
 }

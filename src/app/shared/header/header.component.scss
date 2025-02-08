@@ -3,7 +3,7 @@
 header {
   background-color: styles.$backgroundColorPrimary;
   display: block;
-  border-bottom: 2px solid #414141;
+  border-bottom: 2px solid styles.$borderColor;
 }
 
 .wrapper {
