@@ -1,11 +1,11 @@
 @if(movies$ | async; as movies) {
 <div class="slider">
-  @for(movie of movies.results; track movie.id){
-  <div class="slide">
+  @for(movie of movies.results; track movie.id){ @if($index === slideIndex) {
+  <div [@slideFade] class="slide">
     <div class="slide-bg">
       <img
-        src="{{ 'https://www.themoviedb.org/t/p/w1280' + movie.backdrop_path }}"
-        alt=""
+        [src]="imagesBaseUrl + 'w1280' + movie.backdrop_path"
+        [alt]="movie.title"
       />
     </div>
     <div class="slide-pane">
@@ -21,12 +21,12 @@
           <span>{{ movie.vote_count }}</span>
         </div>
         <div class="release-date mb-3">
-          <i class="pi pi-calendar"></i>{{ movie.release_date }}
+          <i class="pi pi-calendar"></i>{{ movie.release_date | date : "yyyy" }}
         </div>
         <div class="description">{{ movie.overview }}</div>
       </div>
     </div>
   </div>
-  }
+  } }
 </div>
 }

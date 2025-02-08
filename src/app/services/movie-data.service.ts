@@ -7,10 +7,12 @@ import { MovieDto } from '../interfaces/movie.interface';
 })
 export class MovieDataService {
   private http = inject(HttpClient);
+  private apiUrl = 'https://api.themoviedb.org/3';
+  private apiKey = '';
 
   getPopularMovies() {
     return this.http.get<MovieDto>(
-      'https://api.themoviedb.org/3/movie/popular?api_key='
+      `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`
     );
   }
 }
