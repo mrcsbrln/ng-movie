@@ -1,46 +1,5 @@
 @use "../../../styles.scss" as styles;
 
-// .show-item {
-//   position: relative;
-//   display: block;
-//   height: 425px;
-//   border: 1px solid styles.$borderColor;
-//   border-radius: 8px;
-//   &-image {
-//     img {
-//       width: 100%;
-//       border-radius: 8px;
-//       height: 375px;
-//       object-fit: cover;
-//     }
-//   }
-//   &-rating {
-//     position: absolute;
-//     top: 8px;
-//     left: 8px;
-//     display: flex;
-//     gap: 8px;
-//     align-items: center;
-//     background-color: #000;
-//     border-radius: 8px;
-//     padding: 4px 8px;
-//     color: styles.$textColorPrimary;
-//     .pi {
-//       font-size: 1.2rem;
-//       color: styles.$iconColor;
-//     }
-//   }
-//   &-title {
-//     display: flex;
-//     align-items: center;
-//     font-weight: bold;
-//     height: 48px;
-//     background-color: #000;
-//     border-radius: 0 8px 8px 0;
-//     padding: 0 16px;
-//   }
-// }
-
 .movie-card {
   position: relative;
   height: 375px;
