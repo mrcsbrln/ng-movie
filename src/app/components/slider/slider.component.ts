@@ -26,7 +26,7 @@ import { imagesBaseUrl } from '../../constants/images-sizes';
 export class SliderComponent implements OnInit {
   private movieDataService = inject(MovieDataService);
 
-  movies$ = this.movieDataService.getPopularMovies();
+  movies$ = this.movieDataService.getMovieByType('popular');
 
   slideIndex = 0;
 

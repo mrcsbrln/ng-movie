@@ -1,6 +1,6 @@
 @if(movies$ | async; as movies) {
 <div class="slider">
-  @for(movie of movies.results; track movie.id){ @if($index === slideIndex) {
+  @for(movie of movies; track movie.id){ @if($index === slideIndex) {
   <div [@slideFade] class="slide">
     <div class="slide-bg">
       <img
