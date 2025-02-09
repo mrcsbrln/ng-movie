@@ -13,7 +13,7 @@ export interface Movie {
   vote_count: number;
 }
 
-export interface MovieDto {
+export interface MoviesDto {
   page: number;
   results: Movie[];
   total_pages: number;

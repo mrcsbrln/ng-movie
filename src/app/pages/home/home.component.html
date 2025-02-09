@@ -3,4 +3,6 @@
 <app-banner [title]="'Upcoming Movies'" [shows]="upcomingMovies" />
 } @if(topRatedMovies$ | async; as topRatedMovies) {
 <app-banner [title]="'Top Rated Movies'" [shows]="topRatedMovies" />
+} @if(popularTvshows$ | async; as popularTvshows) {
+<app-banner [title]="'Popular TV Shows'" [shows]="popularTvshows" />
 }
