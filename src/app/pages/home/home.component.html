@@ -1,8 +1,8 @@
 <app-slider />
 @if(upcomingMovies$ | async; as upcomingMovies) {
-<app-banner [title]="'Upcoming Movies'" [shows]="upcomingMovies" />
+<app-banner [title]="'Upcoming Movies'" [media]="upcomingMovies" />
 } @if(topRatedMovies$ | async; as topRatedMovies) {
-<app-banner [title]="'Top Rated Movies'" [shows]="topRatedMovies" />
+<app-banner [title]="'Top Rated Movies'" [media]="topRatedMovies" />
 } @if(popularTvshows$ | async; as popularTvshows) {
-<app-banner [title]="'Popular TV Shows'" [shows]="popularTvshows" />
+<app-banner [title]="'Popular TV Shows'" [media]="popularTvshows" />
 }

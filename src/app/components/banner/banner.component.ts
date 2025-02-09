@@ -11,5 +11,5 @@ import { Movie } from '../../interfaces/movie.interface';
 })
 export class BannerComponent {
   @Input() title = '';
-  @Input() shows: Movie[] = [];
+  @Input() media: Movie[] = [];
 }

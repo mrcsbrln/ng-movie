@@ -1,5 +1,5 @@
 @if(showItem) {
-<div class="movie-card">
+<div class="movie-card" [routerLink]="'details/' + showItem.id">
   <div class="movie-rating">
     <i class="pi pi-star"></i>
     <span>{{ showItem.vote_average }}/10</span>
@@ -8,6 +8,8 @@
     [src]="imageBaseUrl + '/w500/' + showItem.poster_path"
     [alt]="showItem.title"
   />
-  <span class="title">{{ showItem.original_title }}</span>
+  <div class="title">
+    <span>{{ showItem.original_title }}</span>
+  </div>
 </div>
 }
