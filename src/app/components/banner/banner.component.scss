@@ -1,1 +1,7 @@
 @use "../../../styles.scss" as styles;
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}

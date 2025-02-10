@@ -1,35 +1,68 @@
 @if(medium$ |async; as medium) {
 <app-slider [slides]="[medium]"></app-slider>
-}
-
 <p-tabs value="0">
   <p-tablist>
-    <p-tab value="0">Header I</p-tab>
-    <p-tab value="1">Header II</p-tab>
-    <p-tab value="2">Header III</p-tab>
+    <p-tab value="0">Overview</p-tab>
+    <p-tab value="1">Videos</p-tab>
+    <p-tab value="2">Photos</p-tab>
   </p-tablist>
   <p-tabpanels>
     <p-tabpanel value="0">
-      <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+      <div class="grid">
+        <div class="col-3">
+          <img
+            [src]="imagesSizes.medium + medium.poster_path"
+            alt=""
+            class="poster"
+          />
+        </div>
+        <div class="col-9">
+          <h2>Overview</h2>
+          <p>{{ medium.overview }}</p>
+          <table>
+            <tr class="stat">
+              <td class="label">Release Date:</td>
+              <td class="value">
+                {{ medium.release_date | date : "dd.MM.yyyy" }}
+              </td>
+            </tr>
+            <tr class="stat">
+              <td class="label">Language:</td>
+              <td class="value">
+                {{ medium.original_language }}
+              </td>
+            </tr>
+            <tr class="stat">
+              <td class="label">Revenue:</td>
+              <td class="value">{{ medium.revenue | currency }}</td>
+            </tr>
+            <tr class="stat">
+              <td class="label">Runtime:</td>
+              <td class="value">{{ medium.runtime }} min</td>
+            </tr>
+            <tr class="stat">
+              <td class="label">Generes:</td>
+              <td class="value">
+                @for(genre of medium.genres; track genre.id ) {
+                {{ genre.name }}
+                }
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </p-tabpanel>
     <p-tabpanel value="1">
-      <p class="m-0">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non
-        numquam eius modi.
-      </p>
+      @if(mediumVideos$ | async; as mediumVideos) {
+      <div class="grid">
+        @for(video of mediumVideos; track video.key) {
+        <div class="col-4">
+          <app-videos-embed [key]="video.key" />
+          {{ video | json }}
+        </div>
+        }
+      </div>
+      }
     </p-tabpanel>
     <p-tabpanel value="2">
       <p class="m-0">
@@ -44,7 +77,7 @@
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>
-
+}
 <p>{{ mediumId }}</p>
 <pre>
     {{ medium$ | async | json }}

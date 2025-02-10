@@ -98,9 +98,5 @@ body {
   font-family: "Roboto", sans-serif;
   color: $text-color-primary;
   background-color: $background-color-secondary;
-}
-
-.container {
-  margin: 0.5rem;
-  padding: 0.5rem;
+  overflow-x: clip;
 }
