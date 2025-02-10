@@ -1,5 +1,6 @@
-<app-slider />
-@if(upcomingMovies$ | async; as upcomingMovies) {
+@if(popularMovies$ | async; as popularMovies) {
+<app-slider [slides]="popularMovies" [isSlider]="true" />
+} @if(upcomingMovies$ | async; as upcomingMovies) {
 <app-banner [title]="'Upcoming Movies'" [media]="upcomingMovies" />
 } @if(topRatedMovies$ | async; as topRatedMovies) {
 <app-banner [title]="'Top Rated Movies'" [media]="topRatedMovies" />

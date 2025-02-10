@@ -4,7 +4,6 @@
   position: relative;
   height: 375px;
   border-radius: 8px;
-  margin: 0.5rem;
   cursor: pointer;
   img {
     position: absolute;
@@ -14,7 +13,7 @@
     object-fit: cover;
     z-index: 1;
     border-radius: 8px;
-    border: 1px solid styles.$borderColor;
+    border: 1px solid styles.$border-color;
   }
   .movie-rating {
     display: flex;
@@ -28,7 +27,7 @@
     padding: 4px 8px;
     border-radius: 8px;
     .pi {
-      color: styles.$iconColor;
+      color: styles.$icon-color;
     }
   }
   .title {

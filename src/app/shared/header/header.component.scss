@@ -1,9 +1,9 @@
 @use "../../../styles.scss" as styles;
 
 header {
-  background-color: styles.$backgroundColorPrimary;
+  background-color: styles.$background-color-primary;
   display: block;
-  border-bottom: 2px solid styles.$borderColor;
+  border-bottom: 2px solid styles.$border-color;
 }
 
 .wrapper {

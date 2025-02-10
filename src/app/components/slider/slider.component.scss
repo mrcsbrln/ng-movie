@@ -34,14 +34,14 @@
       position: absolute;
       top: 5rem;
       left: 5rem;
-      color: styles.$textColorPrimary;
+      color: styles.$text-color-primary;
       .title {
         font-size: 2.5rem;
       }
       .meta-data {
         font-size: 1.2rem;
         .pi {
-          color: styles.$iconColor;
+          color: styles.$icon-color;
           margin-right: 8px;
         }
       }

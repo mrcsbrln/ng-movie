@@ -1,7 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MovieDataService } from '../../services/movie-data.service';
-import { AsyncPipe } from '@angular/common';
 import {
   animate,
   state,
@@ -10,10 +8,11 @@ import {
   trigger,
 } from '@angular/animations';
 import { imagesBaseUrl } from '../../constants/images-sizes';
+import { Movie } from '../../interfaces/movie.interface';
 
 @Component({
   selector: 'app-slider',
-  imports: [AsyncPipe, CommonModule],
+  imports: [CommonModule],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
   animations: [
@@ -24,9 +23,8 @@ import { imagesBaseUrl } from '../../constants/images-sizes';
   ],
 })
 export class SliderComponent implements OnInit {
-  private movieDataService = inject(MovieDataService);
-
-  movies$ = this.movieDataService.getMovieByType('popular');
+  @Input() slides: Movie[] = [];
+  @Input() isSlider = false;
 
   slideIndex = 0;
 
@@ -37,11 +35,13 @@ export class SliderComponent implements OnInit {
   }
 
   changeSlide() {
-    setInterval(() => {
-      this.slideIndex += 1;
-      if (this.slideIndex > 10) {
-        this.slideIndex = 0;
-      }
-    }, 5000);
+    if (this.isSlider) {
+      setInterval(() => {
+        this.slideIndex += 1;
+        if (this.slideIndex > 10) {
+          this.slideIndex = 0;
+        }
+      }, 5000);
+    }
   }
 }

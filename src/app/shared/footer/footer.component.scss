@@ -1,7 +1,7 @@
 @use "../../../styles.scss" as styles;
 
 footer {
-  background-color: styles.$backgroundColorPrimary;
+  background-color: styles.$background-color-primary;
   .wrapper {
     display: flex;
     align-items: center;

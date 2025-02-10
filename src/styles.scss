@@ -73,11 +73,12 @@
   src: url("/fonts/Roboto/roboto-v47-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-$backgroundColorPrimary: #212121;
-$backgroundColorSecondary: #141414;
-$borderColor: #414141;
-$textColorPrimary: #fff;
-$iconColor: orange;
+$primary-color: red;
+$background-color-primary: #212121;
+$background-color-secondary: #141414;
+$border-color: #414141;
+$text-color-primary: #fff;
+$icon-color: orange;
 
 @mixin maxWidth {
   max-width: 1440px;
@@ -86,19 +87,17 @@ $iconColor: orange;
 }
 
 @mixin textStyle {
-  color: $textColorPrimary;
+  color: $text-color-primary;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  transition: all 125ms ease;
+  transition: all 1s ease;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  color: $textColorPrimary;
-  background-color: $backgroundColorSecondary;
+  color: $text-color-primary;
+  background-color: $background-color-secondary;
 }
 
 .container {

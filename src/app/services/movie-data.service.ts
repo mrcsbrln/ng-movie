@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { MoviesDto } from '../interfaces/movie.interface';
+import { Movie, MoviesDto } from '../interfaces/movie.interface';
 import { map } from 'rxjs';
 
 @Injectable({
@@ -15,5 +15,11 @@ export class MovieDataService {
     return this.http
       .get<MoviesDto>(`${this.apiUrl}/movie/${type}?api_key=${this.apiKey}`)
       .pipe(map((data) => data.results.slice(0, count)));
+  }
+
+  getMovieById(id: string) {
+    return this.http.get<Movie>(
+      `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
+    );
   }
 }

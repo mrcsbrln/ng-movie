@@ -17,6 +17,7 @@ export class HomeComponent {
   private movieDataService = inject(MovieDataService);
   private tvshowsDataService = inject(TvshowsDataService);
 
+  popularMovies$ = this.movieDataService.getMovieByType('popular');
   upcomingMovies$ = this.movieDataService.getMovieByType('upcoming');
   topRatedMovies$ = this.movieDataService.getMovieByType('top_rated');
   popularTvshows$ = this.tvshowsDataService
