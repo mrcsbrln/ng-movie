@@ -8,11 +8,19 @@ import { SliderComponent } from '../../components/slider/slider.component';
 import { TabsModule } from 'primeng/tabs';
 import { IMAGE_SIZES } from '../../constants/images-sizes';
 import { Video } from '../../interfaces/video.interface';
+import { Image } from '../../interfaces/image.interface';
 import { VideosEmbedComponent } from '../../components/videos-embed/videos-embed.component';
+import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-detail-view',
-  imports: [CommonModule, SliderComponent, TabsModule, VideosEmbedComponent],
+  imports: [
+    CommonModule,
+    SliderComponent,
+    TabsModule,
+    VideosEmbedComponent,
+    ImageModule,
+  ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss',
 })
@@ -24,6 +32,7 @@ export class DetailViewComponent implements OnInit {
   medium$: Observable<Movie> | null = null;
   imagesSizes = IMAGE_SIZES;
   mediumVideos$: Observable<Video[]> | null = null;
+  mediumImages$: Observable<Image[]> | null = null;
 
   ngOnInit() {
     this.router.params.subscribe((params) => {
@@ -31,5 +40,6 @@ export class DetailViewComponent implements OnInit {
     });
     this.medium$ = this.movieDataService.getMovieById(this.mediumId);
     this.mediumVideos$ = this.movieDataService.getMovieVideos(this.mediumId);
+    this.mediumImages$ = this.movieDataService.getMovieImages(this.mediumId);
   }
 }

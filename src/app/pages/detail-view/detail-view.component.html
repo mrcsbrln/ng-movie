@@ -58,22 +58,26 @@
         @for(video of mediumVideos; track video.key) {
         <div class="col-4">
           <app-videos-embed [key]="video.key" />
-          {{ video | json }}
         </div>
         }
       </div>
       }
     </p-tabpanel>
     <p-tabpanel value="2">
-      <p class="m-0">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati cupiditate non provident,
-        similique sunt in culpa qui officia deserunt mollitia animi, id est
-        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-        cumque nihil impedit quo minus.
-      </p>
+      @if(mediumImages$ |async; as mediumImages) {
+      <div class="grid">
+        @for(image of mediumImages; track image.file_path) {
+        <div class="col-2">
+          <p-image
+            [src]="imagesSizes.large + image.file_path"
+            [alt]="medium.title"
+            width="100%"
+            [preview]="true"
+          />
+        </div>
+        }
+      </div>
+      }
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>
