@@ -1,9 +1,21 @@
 @if(popularMovies$ | async; as popularMovies) {
 <app-slider [slides]="popularMovies" [isSlider]="true" />
 } @if(upcomingMovies$ | async; as upcomingMovies) {
-<app-banner [title]="'Upcoming Movies'" [media]="upcomingMovies" />
+<app-banner
+  [title]="'Upcoming Movies'"
+  [media]="upcomingMovies"
+  mediumType="movie"
+/>
 } @if(topRatedMovies$ | async; as topRatedMovies) {
-<app-banner [title]="'Top Rated Movies'" [media]="topRatedMovies" />
+<app-banner
+  [title]="'Top Rated Movies'"
+  [media]="topRatedMovies"
+  mediumType="movie"
+/>
 } @if(popularTvshows$ | async; as popularTvshows) {
-<app-banner [title]="'Popular TV Shows'" [media]="popularTvshows" />
+<app-banner
+  [title]="'Popular TV Shows'"
+  [media]="popularTvshows"
+  mediumType="tv"
+/>
 }

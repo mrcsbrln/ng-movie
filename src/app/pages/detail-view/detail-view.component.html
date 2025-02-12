@@ -81,8 +81,27 @@
     </p-tabpanel>
   </p-tabpanels>
 </p-tabs>
+} @if(mediumCast$ |async; as actors) {
+<p-carousel
+  [value]="actors"
+  [numVisible]="6"
+  [numScroll]="3"
+  [circular]="false"
+>
+  <ng-template let-actor #item>
+    <div class="actor">
+      @if(actor.profile_path) {
+      <img [src]="imagesSizes.medium + actor.profile_path" alt="" />
+      } @else {
+      <img src="img/actor.jpg" alt="" />
+      }
+      <div class="name">
+        <span> {{ actor.character }}</span>
+        <span> ({{ actor.name }})</span>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+} @if(similarMovies$ | async; as similarMovies){
+<app-banner [title]="'Similar Movies'" [media]="similarMovies"></app-banner>
 }
-<p>{{ mediumId }}</p>
-<pre>
-    {{ medium$ | async | json }}
-</pre>

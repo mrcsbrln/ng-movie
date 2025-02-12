@@ -21,6 +21,6 @@ export class HomeComponent {
   upcomingMovies$ = this.movieDataService.getMovieByType('upcoming');
   topRatedMovies$ = this.movieDataService.getMovieByType('top_rated');
   popularTvshows$ = this.tvshowsDataService
-    .getTvshowByType('popular')
+    .getTvshowsByType('popular')
     .pipe(map(mapToMovies));
 }

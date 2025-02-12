@@ -32,3 +32,11 @@ export function mapToMovies(tvshows: Tvshow[]): Movie[] {
     };
   });
 }
+
+export function mapToMovie(tvshow: Tvshow): Movie {
+  return {
+    ...tvshow,
+    title: tvshow.name,
+    original_title: tvshow.original_name,
+  };
+}

@@ -1,5 +1,8 @@
 @if(showItem) {
-<div class="movie-card" [routerLink]="'details/' + showItem.id">
+<div
+  class="movie-card"
+  [routerLink]="'details/' + showItem.id + '/' + mediumType"
+>
   <div class="movie-rating">
     <i class="pi pi-star"></i>
     <span>{{ showItem.vote_average }}/10</span>
