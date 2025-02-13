@@ -32,7 +32,7 @@ import { mapToMovie } from '../../interfaces/tvshow.interface';
   styleUrl: './detail-view.component.scss',
 })
 export class DetailViewComponent implements OnInit {
-  private router = inject(ActivatedRoute);
+  private route = inject(ActivatedRoute);
   private movieDataService = inject(MovieDataService);
   private tvshowDataService = inject(TvshowsDataService);
 
@@ -46,7 +46,7 @@ export class DetailViewComponent implements OnInit {
   similarMovies$: Observable<Movie[]> | null = null;
 
   ngOnInit() {
-    this.router.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       this.mediumId = params['id'];
       this.mediumType = params['type'];
     });

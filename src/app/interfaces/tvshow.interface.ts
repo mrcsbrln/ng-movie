@@ -1,4 +1,4 @@
-import { Movie } from './movie.interface';
+import { Movie, MoviesDto } from './movie.interface';
 
 export interface Tvshow {
   id: number;
@@ -38,5 +38,14 @@ export function mapToMovie(tvshow: Tvshow): Movie {
     ...tvshow,
     title: tvshow.name,
     original_title: tvshow.original_name,
+  };
+}
+
+export function mapToMovieDto(tvshowDto: TvshowsDto): MoviesDto {
+  return {
+    results: tvshowDto.results.map(mapToMovie),
+    total_pages: tvshowDto.total_pages,
+    total_results: tvshowDto.total_results,
+    page: tvshowDto.page,
   };
 }

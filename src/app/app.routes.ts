@@ -5,6 +5,6 @@ import { DetailViewComponent } from './pages/detail-view/detail-view.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'list', component: ListComponent },
+  { path: 'list/:type', component: ListComponent },
   { path: 'details/:id/:type', component: DetailViewComponent },
 ];

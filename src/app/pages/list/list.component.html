@@ -1,7 +1,10 @@
 <div>
-  <div class="grid">
+  <div class="grid input-wrapper">
     <div class="col-12">
       <input
+        pInputText
+        pSize="large"
+        placeholder="Search"
         type="text"
         pInputText
         [(ngModel)]="searchValue"
@@ -10,21 +13,23 @@
     </div>
   </div>
   @if(list$ | async; as list) {
-  <div class="grid">
-    @for(item of list; track item.id) {
+  <div class="grid wrapper">
+    @for(item of list.results; track item.id) {
     <div class="col-2">
-      <app-show-item [showItem]="item" />
+      <app-show-item [showItem]="item" [mediumType]="mediumType" />
     </div>
     }
   </div>
-  }
+
   <div class="grid">
     <div class="col-12">
       <p-paginator
         (onPageChange)="pageChanged($event)"
         [rows]="20"
-        [totalRecords]="120"
+        [totalRecords]="totalRecords"
+        [first]="(currentPage - 1) * 20"
       />
     </div>
   </div>
+  }
 </div>
