@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-movie-list',
   imports: [],
   templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.scss'
+  styleUrl: './movie-list.component.scss',
 })
-export class MovieListComponent {
-
-}
+export class MovieListComponent {}

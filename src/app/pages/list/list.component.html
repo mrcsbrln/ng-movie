@@ -1,0 +1,30 @@
+<div>
+  <div class="grid">
+    <div class="col-12">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="searchValue"
+        (change)="searchChanged()"
+      />
+    </div>
+  </div>
+  @if(list$ | async; as list) {
+  <div class="grid">
+    @for(item of list; track item.id) {
+    <div class="col-2">
+      <app-show-item [showItem]="item" />
+    </div>
+    }
+  </div>
+  }
+  <div class="grid">
+    <div class="col-12">
+      <p-paginator
+        (onPageChange)="pageChanged($event)"
+        [rows]="20"
+        [totalRecords]="120"
+      />
+    </div>
+  </div>
+</div>
