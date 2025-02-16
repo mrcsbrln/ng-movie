@@ -1,0 +1,28 @@
+<div class="genres">
+  <div class="grid">
+    <div class="col-12">
+      @if(genres$ | async; as genres) { @for(genre of genres; track genre.id) {
+      <p-button [label]="genre.name" [routerLink]="'/genres/' + genre.id" />
+      } }
+    </div>
+  </div>
+  @if(media$ | async; as media) {
+  <div class="grid wrapper">
+    @for(medium of media; track medium.id) {
+    <div class="col-2">
+      <app-show-item [showItem]="medium" />
+    </div>
+    }
+  </div>
+  <div class="grid">
+    <div class="col-12">
+      <!-- <p-paginator
+          (onPageChange)="pageChanged($event)"
+          [rows]="20"
+          [totalRecords]="totalRecords"
+          [first]="(currentPage - 1) * 20"
+        /> -->
+    </div>
+  </div>
+  }
+</div>
