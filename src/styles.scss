@@ -90,13 +90,15 @@ $icon-color: orange;
   color: $text-color-primary;
 }
 
-* {
-  transition: all 1s ease;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   color: $text-color-primary;
   background-color: $background-color-secondary;
   overflow-x: clip;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-primary;
 }

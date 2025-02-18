@@ -27,8 +27,4 @@ export class GenresComponent implements OnInit {
       this.media$ = this.movieDataService.getMoviesByGenre(this.genreId);
     });
   }
-
-  // findByGenre(genreId: string) {
-  //   this.media$ = this.movieDataService.getMoviesByGenre(genreId);
-  // }
 }

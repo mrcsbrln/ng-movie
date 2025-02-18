@@ -9,7 +9,7 @@
   @if(media$ | async; as media) {
   <div class="grid wrapper">
     @for(medium of media; track medium.id) {
-    <div class="col-2">
+    <div class="col-12 md:col-6 lg:col-4">
       <app-show-item [showItem]="medium" />
     </div>
     }
@@ -17,11 +17,11 @@
   <div class="grid">
     <div class="col-12">
       <!-- <p-paginator
-          (onPageChange)="pageChanged($event)"
-          [rows]="20"
-          [totalRecords]="totalRecords"
-          [first]="(currentPage - 1) * 20"
-        /> -->
+        (onPageChange)="pageChanged($event)"
+        [rows]="20"
+        [totalRecords]="totalRecords"
+        [first]="(currentPage - 1) * 20"
+      /> -->
     </div>
   </div>
   }
