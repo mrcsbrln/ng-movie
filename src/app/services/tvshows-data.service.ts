@@ -6,14 +6,15 @@ import { VideoDto } from '../interfaces/video.interface';
 import { ImageDto } from '../interfaces/image.interface';
 import { CreditsDto } from '../interfaces/credits.interface';
 import { MoviesDto } from '../interfaces/movie.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TvshowsDataService {
   private http = inject(HttpClient);
-  private apiUrl = 'https://api.themoviedb.org/3';
-  private apiKey = '';
+  private apiUrl = environment.apiUrl;
+  private apiKey = environment.apiKey;
 
   getTvshowsByType(type: string, count = 12) {
     return this.http
