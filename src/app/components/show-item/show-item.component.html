@@ -5,7 +5,7 @@
 >
   <div class="movie-rating">
     <i class="pi pi-star"></i>
-    <span>{{ showItem.vote_average }}/10</span>
+    <span>{{ showItem.vote_average | number : "1.1-1" }}/10</span>
   </div>
   <img
     [src]="imageBaseUrl + '/w500/' + showItem.poster_path"
