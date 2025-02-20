@@ -47,7 +47,7 @@ export class ListComponent implements OnInit {
     if (mediumType === 'movie') {
       this.list$ = this.moviesDataService.searchMovies(page, searchValue).pipe(
         tap((data) => {
-          this.totalRecords = data.total_results; // Setze die Gesamtanzahl für den Paginator
+          this.totalRecords = data.total_results;
         })
       );
     } else {
@@ -56,7 +56,7 @@ export class ListComponent implements OnInit {
         .pipe(
           map(mapToMovieDto),
           tap((data) => {
-            this.totalRecords = data.total_results; // Setze die Gesamtanzahl für den Paginator
+            this.totalRecords = data.total_results;
           })
         );
     }
