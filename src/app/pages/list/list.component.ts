@@ -42,21 +42,27 @@ export class ListComponent implements OnInit {
   }
 
   getPagedList(mediumType: 'movie' | 'tv', page: number, searchValue?: string) {
-    this.currentPage = page;
+    const validPage = Math.min(page, 500);
+    this.currentPage = validPage;
+
+    const queryParam =
+      searchValue && searchValue.trim().length > 0 ? searchValue : undefined;
 
     if (mediumType === 'movie') {
-      this.list$ = this.moviesDataService.searchMovies(page, searchValue).pipe(
-        tap((data) => {
-          this.totalRecords = data.total_results;
-        })
-      );
+      this.list$ = this.moviesDataService
+        .searchMovies(validPage, queryParam)
+        .pipe(
+          tap((data) => {
+            this.totalRecords = Math.min(data.total_results, 500 * 20);
+          })
+        );
     } else {
       this.list$ = this.tvshowsDataService
-        .searchTvshows(page, searchValue)
+        .searchTvshows(validPage, queryParam)
         .pipe(
           map(mapToMovieDto),
           tap((data) => {
-            this.totalRecords = data.total_results;
+            this.totalRecords = Math.min(data.total_results, 500 * 20);
           })
         );
     }

@@ -6,12 +6,18 @@ header {
   border-bottom: 2px solid styles.$border-color;
 }
 
+i {
+  cursor: pointer;
+  font-size: 32px;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px;
   .logo {
+    cursor: pointer;
     span {
       font-size: 3rem;
       font-weight: 900;
@@ -20,10 +26,11 @@ header {
   }
   nav {
     ul {
+      display: flex;
+      gap: 16px;
       list-style: none;
       li {
         display: inline;
-        margin: 16px;
         a {
           @include styles.textStyle();
           text-decoration: none;

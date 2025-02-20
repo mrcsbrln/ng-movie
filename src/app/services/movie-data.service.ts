@@ -84,11 +84,9 @@ export class MovieDataService {
   }
 
   getMoviesByGenre(genreId: string, pageNumber = 1) {
-    return this.http
-      .get<MoviesDto>(
-        `${this.apiUrl}/discover/movie?with_genres=${genreId}&page=${pageNumber}`,
-        { headers: this.getHeaders() }
-      )
-      .pipe(map((data) => data.results));
+    return this.http.get<MoviesDto>(
+      `${this.apiUrl}/discover/movie?with_genres=${genreId}&page=${pageNumber}`,
+      { headers: this.getHeaders() }
+    );
   }
 }
