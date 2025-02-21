@@ -1,0 +1,25 @@
+@use "../../../styles.scss" as styles;
+
+:host {
+  position: absolute;
+  z-index: 3;
+}
+
+i {
+  cursor: pointer;
+  font-size: 24px;
+  float: right;
+  position: absolute;
+  right: 64px;
+}
+
+.overlay {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 64px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  backdrop-filter: blur(10px);
+}

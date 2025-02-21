@@ -1,0 +1,19 @@
+<div class="overlay">
+  <i
+    class="pi pi-times close-icon"
+    (click)="closeMenu()"
+    (keydown.enter)="closeMenu()"
+    (keydown.space)="closeMenu()"
+    tabindex="0"
+    role="button"
+    aria-label="Close mobile menu"
+  ></i>
+  <nav>
+    <ul class="link-text">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/list/movie" (click)="closeMenu()">Movies</a></li>
+      <li><a routerLink="/list/tv" (click)="closeMenu()">TV Shows</a></li>
+      <li><a routerLink="/genres" (click)="closeMenu()">Genres</a></li>
+    </ul>
+  </nav>
+</div>

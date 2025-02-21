@@ -1,7 +1,16 @@
 <div class="wrapper">
-  <app-header />
+  <app-header (menuToggle)="toggleMobileMenu()" />
+
+  @if (mobileMenuVisible()) {
+  <app-mobile-menu
+    [isOpen]="mobileMenuVisible()"
+    (menuClose)="closeMobileMenu()"
+  />
+  }
+
   <div class="content">
     <router-outlet />
   </div>
+
   <app-footer />
 </div>

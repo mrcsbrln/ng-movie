@@ -20,6 +20,14 @@
         </li>
       </ul>
     </nav>
-    <i class="pi pi-bars block sm:hidden"></i>
+    <i
+      class="pi pi-bars block sm:hidden"
+      (click)="toggleMobileMenu()"
+      (keydown.enter)="toggleMobileMenu()"
+      (keydown.space)="toggleMobileMenu()"
+      tabindex="0"
+      role="button"
+      aria-label="Toggle mobile menu"
+    ></i>
   </div>
 </header>

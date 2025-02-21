@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,4 +7,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  @Output() menuToggle = new EventEmitter<void>();
+
+  toggleMobileMenu() {
+    this.menuToggle.emit();
+  }
+}
