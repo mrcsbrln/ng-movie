@@ -3,7 +3,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-videos-embed',
-  imports: [],
   templateUrl: './videos-embed.component.html',
   styleUrl: './videos-embed.component.scss',
 })
@@ -12,10 +11,17 @@ export class VideosEmbedComponent implements OnInit {
   @Input() key: string | null = null;
 
   videoUrl: SafeResourceUrl = '';
+  showVideo = false;
 
   ngOnInit() {
-    this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/embed/' + this.key
-    );
+    if (this.key) {
+      this.videoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(
+        'https://www.youtube-nocookie.com/embed/' + this.key
+      );
+    }
+  }
+
+  allowVideo() {
+    this.showVideo = true;
   }
 }
