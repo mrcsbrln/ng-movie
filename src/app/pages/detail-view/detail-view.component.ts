@@ -49,7 +49,11 @@ export class DetailViewComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.mediumId = params['id'];
       this.mediumType = params['type'];
+      this.loadData();
     });
+  }
+
+  private loadData() {
     if (this.mediumType === 'movie') {
       this.medium$ = this.movieDataService.getMovieById(this.mediumId);
       this.mediumVideos$ = this.movieDataService.getMovieVideos(this.mediumId);
@@ -58,8 +62,7 @@ export class DetailViewComponent implements OnInit {
       this.similarMovies$ = this.movieDataService.getSimilarMovies(
         this.mediumId
       );
-    }
-    if (this.mediumType === 'tv') {
+    } else if (this.mediumType === 'tv') {
       this.medium$ = this.tvshowDataService
         .getTvshowById(this.mediumId)
         .pipe(map(mapToMovie));

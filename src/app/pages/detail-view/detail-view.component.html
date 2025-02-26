@@ -103,5 +103,9 @@
   </ng-template>
 </p-carousel>
 } @if(similarMovies$ | async; as similarMovies){
-<app-banner [title]="'Similar Movies'" [media]="similarMovies"></app-banner>
+<app-banner
+  [title]="'Similar Movies'"
+  [media]="similarMovies"
+  mediumType="movie"
+></app-banner>
 }
